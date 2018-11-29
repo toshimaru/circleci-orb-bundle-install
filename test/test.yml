@@ -5,8 +5,8 @@ jobs:
     docker:
       - image: circleci/ruby
     steps:
-      - mv test/Gemfile.sample Gemfile
-      - bundle install
+      - run: mv test/Gemfile.sample Gemfile
+      - run: bundle install
 
       # test commnad
       - bundle-install/bundle-install
