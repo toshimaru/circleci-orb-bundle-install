@@ -6,8 +6,12 @@ jobs:
       - image: circleci/ruby
     steps:
       - checkout
-      - run: mv test/Gemfile.sample Gemfile
-      - run: bundle install
+
+      - run:
+          name: Create Gemfile and Gemfile.lock
+          command: |
+            mv test/Gemfile.sample Gemfile
+            mv test/Gemfile.lock.dummy Gemfile.lock
 
       # test commnad
       - bundle-install/bundle-install
