@@ -1,0 +1,27 @@
+version: "2.1"
+description: "a sample orb"
+
+commands:
+  hello:
+    steps:
+      - run:
+          name: Echo "hello"
+          command: echo hello
+
+  world:
+    steps:
+      - run:
+          name: Echo "world"
+          command: echo world
+
+executors:
+  default:
+    docker:
+      - image: busybox
+
+jobs:
+  hello_world:
+    executor: default
+    steps:
+      - hello
+      - world

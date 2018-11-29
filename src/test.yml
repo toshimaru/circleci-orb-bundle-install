@@ -1,0 +1,8 @@
+version: "2.1"
+
+jobs:
+  build:
+    executor: bundle-install/default
+    steps:
+      - bundle-install/hello
+      - bundle-install/world

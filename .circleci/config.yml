@@ -1,0 +1,16 @@
+version: "2.1"
+
+orbs:
+  orb-tools: circleci/orb-tools@2.0.2
+
+workflows:
+  version: "2"
+
+  test_orb:
+    jobs:
+      - orb-tools/test-in-builds:
+          orb-location: src/orb.yml
+          orb-name: bundle-install
+          test-steps:
+            - orb-tools/local-test-build:
+                test-config-location: src/test.yml
