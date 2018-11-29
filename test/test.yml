@@ -6,7 +6,6 @@ jobs:
       - image: circleci/ruby
     steps:
       - checkout
-
       - run:
           name: Create Gemfile and Gemfile.lock
           command: |
