@@ -2,26 +2,15 @@ version: "2.1"
 description: "a sample orb"
 
 commands:
-  hello:
+  bundle-install:
+    description: "bundle install with cache"
     steps:
-      - run:
-          name: Echo "hello"
-          command: echo hello
-
-  world:
-    steps:
-      - run:
-          name: Echo "world"
-          command: echo world
-
-executors:
-  default:
-    docker:
-      - image: busybox
-
-jobs:
-  hello_world:
-    executor: default
-    steps:
-      - hello
-      - world
+      - restore_cache:
+          keys: 
+            - bundle-cache-{{ checksum "Gemfile.lock" }}
+            - bundle-cache-
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          key: bundle-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
