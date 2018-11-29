@@ -1,6 +1,6 @@
 version: "2.1"
 
-description: "Simple bundle install command with cache"
+description: "Simple Ruby `bundle install` command with cache. https://github.com/toshimaru/bundle-install"
 
 commands:
   bundle-install:
