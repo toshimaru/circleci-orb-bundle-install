@@ -13,4 +13,4 @@ workflows:
           orb-name: bundle-install
           test-steps:
             - orb-tools/local-test-build:
-                test-config-location: src/test.yml
+                test-config-location: test/test.yml
