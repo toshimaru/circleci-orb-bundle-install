@@ -5,12 +5,21 @@ description: "Simple Ruby `bundle install` command with cache. https://github.co
 commands:
   bundle-install:
     description: "bundle install with cache"
+    parameters:
+      jobs:
+        type: integer
+        default: 4
+        description: "Parameter for `bundle install --jobs`"
+      retry:
+        type: integer
+        default: 3
+        description: "Parameter for `bundle install --retry`"
     steps:
       - restore_cache:
           keys: 
             - bundle-cache-{{ checksum "Gemfile.lock" }}
             - bundle-cache
-      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run: bundle install --jobs=<< parameters.jobs >> --retry=<< parameters.retry >> --path vendor/bundle
       - save_cache:
           key: bundle-cache-{{ checksum "Gemfile.lock" }}
           paths:
