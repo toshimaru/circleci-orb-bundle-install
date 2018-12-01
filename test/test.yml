@@ -14,3 +14,8 @@ jobs:
 
       # test commnad
       - bundle-install/bundle-install
+
+      # test commnad
+      - bundle-install/bundle-install:
+          jobs: 1
+          retry: 1
