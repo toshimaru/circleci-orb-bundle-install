@@ -9,8 +9,10 @@ CircleCI Orbs which runs Ruby `bundle install` command with cache.
 ```yml
 
 version: 2.1
- orbs:
-  toshimaru: toshimaru/bundle-install@0.0.2
+
+orbs:
+  # Specify Version after `@`
+  toshimaru: toshimaru/bundle-install@0.x.x
 
 jobs:
   build:
