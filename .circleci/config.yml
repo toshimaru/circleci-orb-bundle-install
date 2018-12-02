@@ -10,7 +10,7 @@ workflows:
     jobs:
       - orb-tools/test-in-builds:
           orb-location: src/orb.yml
-          orb-name: bundle-install
+          orb-name: toshimaru
           test-steps:
             - orb-tools/local-test-build:
                 test-config-location: test/test.yml
