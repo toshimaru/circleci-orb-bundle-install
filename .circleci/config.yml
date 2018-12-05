@@ -2,10 +2,19 @@ version: "2.1"
 
 orbs:
   orb-tools: circleci/orb-tools@2.0.2
+  cli: circleci/circleci-cli@0.1.2
+
+jobs:
+  validate:
+    executor: cli/default
+    steps:
+      - checkout
+      - run: circleci orb validate src/orb.yml
 
 workflows:
   test_orb:
     jobs:
+      - validate
       - orb-tools/test-in-builds:
           orb-location: src/orb.yml
           orb-name: bundle-install
