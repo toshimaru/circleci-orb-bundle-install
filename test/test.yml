@@ -12,7 +12,11 @@ jobs:
             mv test/Gemfile.sample Gemfile
             mv test/Gemfile.lock.dummy Gemfile.lock
       # test my orb commnad
-      - toshimaru/bundle-install
-      - toshimaru/bundle-install:
+      - bundle-install/bundle-install
+      - bundle-install/bundle-install:
           jobs: 1
           retry: 1
+      - bundle-install/bundle-install:
+          jobs: 10
+      - bundle-install/bundle-install:
+          retry: 10

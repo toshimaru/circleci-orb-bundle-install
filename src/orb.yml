@@ -2,6 +2,22 @@ version: "2.1"
 
 description: "Simple Ruby `bundle install` command with cache. https://github.com/toshimaru/bundle-install"
 
+examples:
+  run_rspec:
+    description: Run RSpec after bundle-install
+    usage:
+      version: 2.1
+      orbs:
+        bundle-install: toshimaru/bundle-install@0.1.0
+      jobs:
+        rspec:
+          docker:
+            - image: circleci/ruby:2.5
+          steps:
+            - checkout
+            - bundle-install/bundle-install
+            - run: bundle exec rspec
+
 commands:
   bundle-install:
     description: "bundle install with cache"

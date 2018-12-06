@@ -2,15 +2,22 @@ version: "2.1"
 
 orbs:
   orb-tools: circleci/orb-tools@2.0.2
+  cli: circleci/circleci-cli@0.1.2
+
+jobs:
+  validate:
+    executor: cli/default
+    steps:
+      - checkout
+      - run: circleci orb validate src/orb.yml
 
 workflows:
-  version: "2"
-
   test_orb:
     jobs:
+      - validate
       - orb-tools/test-in-builds:
           orb-location: src/orb.yml
-          orb-name: toshimaru
+          orb-name: bundle-install
           test-steps:
             - orb-tools/local-test-build:
                 test-config-location: test/test.yml
