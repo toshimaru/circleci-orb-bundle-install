@@ -34,13 +34,17 @@ commands:
         type: string
         default: vendor/bundle
         description: "Parameter for `bundle install --path`"
+      cache_key_prefix:
+        type: string
+        default: bundle-cache
+        description: "Parameter for CircleCI cache key prefix"
     steps:
       - restore_cache:
           keys: 
-            - bundle-cache-{{ checksum "Gemfile.lock" }}
-            - bundle-cache
+            - << parameters.cache_key_prefix >>-{{ checksum "Gemfile.lock" }}
+            - << parameters.cache_key_prefix >>
       - run: bundle install --jobs=<< parameters.jobs >> --retry=<< parameters.retry >> --path << parameters.bundle_path >>
       - save_cache:
-          key: bundle-cache-{{ checksum "Gemfile.lock" }}
+          key: << parameters.cache_key_prefix >>-{{ checksum "Gemfile.lock" }}
           paths:
             - << parameters.bundle_path >>
