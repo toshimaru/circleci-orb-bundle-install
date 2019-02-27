@@ -30,13 +30,17 @@ commands:
         type: integer
         default: 3
         description: "Parameter for `bundle install --retry`"
+      bundle_path:
+        type: string
+        default: vendor/bundle
+        description: "Parameter for `bundle install --path`"
     steps:
       - restore_cache:
           keys: 
             - bundle-cache-{{ checksum "Gemfile.lock" }}
             - bundle-cache
-      - run: bundle install --jobs=<< parameters.jobs >> --retry=<< parameters.retry >> --path vendor/bundle
+      - run: bundle install --jobs=<< parameters.jobs >> --retry=<< parameters.retry >> --path << parameters.bundle_path >>
       - save_cache:
           key: bundle-cache-{{ checksum "Gemfile.lock" }}
           paths:
-            - vendor/bundle
+            - << parameters.bundle_path >>
