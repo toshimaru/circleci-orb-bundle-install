@@ -16,6 +16,7 @@ jobs:
       - bundle-install/bundle-install:
           jobs: 1
           retry: 1
+          bundle_path: vendor/custom_bundle
       - bundle-install/bundle-install:
           jobs: 10
       - bundle-install/bundle-install:
