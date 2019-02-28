@@ -17,9 +17,12 @@ jobs:
           jobs: 1
           retry: 1
           bundle_path: vendor/custom_bundle
+          cache_key_prefix: v1
       - bundle-install/bundle-install:
           jobs: 10
       - bundle-install/bundle-install:
           retry: 10
       - bundle-install/bundle-install:
           bundle_path: vendor/custom_bundle
+      - bundle-install/bundle-install:
+          cache_key_prefix: v1
