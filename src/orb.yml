@@ -40,7 +40,7 @@ commands:
         description: "Parameter for CircleCI cache key prefix"
     steps:
       - restore_cache:
-          keys: 
+          keys:
             - << parameters.cache_key_prefix >>-{{ checksum "Gemfile.lock" }}
             - << parameters.cache_key_prefix >>
       - run: bundle install --jobs=<< parameters.jobs >> --retry=<< parameters.retry >> --path << parameters.bundle_path >>
