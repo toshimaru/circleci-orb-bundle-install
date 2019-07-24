@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/toshimaru/bundle-install.svg?style=svg)](https://circleci.com/gh/toshimaru/bundle-install)
 
-CircleCI Orbs which runs Ruby `bundle install` command with cache.
+CircleCI Orb which runs Ruby `bundle install` command with cache handling.
 
 ## Usage
 
@@ -11,7 +11,7 @@ version: 2.1
 
 orbs:
   # Specify Version after `@`
-  bundle-install: toshimaru/bundle-install@0.x.x
+  bundle-install: toshimaru/bundle-install@x.y.z
 
 jobs:
   build:
