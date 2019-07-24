@@ -11,7 +11,7 @@ version: 2.1
 
 orbs:
   # Specify Version after `@`
-  bundle-install: toshimaru/bundle-install@0.x.x
+  bundle-install: toshimaru/bundle-install@x.y.z
 
 jobs:
   build:
