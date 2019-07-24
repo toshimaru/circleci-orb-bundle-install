@@ -1,6 +1,6 @@
-version: "2.1"
+version: 2.1
 
-description: "Simple Ruby `bundle install` command with cache. https://github.com/toshimaru/bundle-install"
+description: "Simple Ruby `bundle install` command with cache handling. https://github.com/toshimaru/bundle-install"
 
 examples:
   run_rspec:
@@ -8,7 +8,7 @@ examples:
     usage:
       version: 2.1
       orbs:
-        bundle-install: toshimaru/bundle-install@0.1.0
+        bundle-install: toshimaru/bundle-install@x.y.z
       jobs:
         rspec:
           docker:
