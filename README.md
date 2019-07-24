@@ -1,5 +1,6 @@
-# CircleCI Orbs: `toshimaru/bundle-install` 
+# CircleCI Orb: `toshimaru/bundle-install` 
 
+[![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/toshimaru/bundle-install)](https://circleci.com/orbs/registry/orb/toshimaru/bundle-install)
 [![CircleCI](https://circleci.com/gh/toshimaru/bundle-install.svg?style=svg)](https://circleci.com/gh/toshimaru/bundle-install)
 
 CircleCI Orb which runs Ruby `bundle install` command with cache handling.
