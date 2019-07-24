@@ -12,7 +12,7 @@ examples:
       jobs:
         rspec:
           docker:
-            - image: circleci/ruby:2.5
+            - image: circleci/ruby:2.6.3
           steps:
             - checkout
             - bundle-install/bundle-install
