@@ -1,3 +1,5 @@
+**:warning: This Orb has been deprecated in favor of CircleCI official [ruby-orb](https://github.com/CircleCI-Public/ruby-orb)**
+
 # CircleCI Orb: `toshimaru/bundle-install` 
 
 [![CircleCI Orb Version](https://img.shields.io/badge/endpoint.svg?url=https://badges.circleci.io/orb/toshimaru/bundle-install)](https://circleci.com/orbs/registry/orb/toshimaru/bundle-install)
